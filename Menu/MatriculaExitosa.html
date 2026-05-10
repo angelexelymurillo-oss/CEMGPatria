@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Matrícula Exitosa - CEMG Patria</title>
+
+<link rel="icon" href="../Imagenes/Patria Logo.png">
+<!---------------------------------------------------------------------CodigoCSS--------------------------------------------------------------------->
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    background:#ecf0f1;
+}
+
+/* ENCABEZADO */
+
+.header{
+    background:#2c3e50;
+    color:white;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'../Carreras/Imagenes/Matcha Cih.ttf';
+}
+
+.header img{
+    height:90px;
+}
+
+.titulo-header{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:white;
+}
+
+/* CONTENIDO */
+
+.content{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* CAJA */
+
+.caja-exito{
+    background:white;
+    width:450px;
+    padding:40px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.caja-exito h1{
+    color:#2ecc71;
+    margin-bottom:20px;
+}
+
+.caja-exito p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+/* BOTON */
+
+.btn-inicio{
+    background:#2ecc71;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn-inicio:hover{
+    background:#27ae60;
+}
+
+/* Pie de pagina */
+
+.footer{
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+    margin-top:50px;
+}
+
+</style>
+</head>
+<!---------------------------------------------------------------------CodigoHTMl--------------------------------------------------------------------->
+<body>
+
+<!-- Encabezado -->
+
+<div class="header">
+
+    <img src="../Imagenes/Patria Logo.png" alt="Logo">
+
+    <div class="titulo-header">
+        CEMG Patria
+    </div>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="content">
+
+    <div class="caja-exito">
+
+        <h1>✅ Matrícula Exitosa</h1>
+
+        <p>
+            Se ha matrículo correctamente.
+        </p>
+
+        <a href="../Index.html">
+
+            <button class="btn-inicio">
+                Volver al Inicio
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Pie de Pagina -->
+
+<div class="footer">
+
+    <h3>Contactos</h3>
+
+    <p>Ubicación: La Lima, Cortes</p>
+    <p>Teléfono: 9832-8273</p>
+    <p>Correo: InstitutoPatria@gmail.com</p>
+    <p>Alumno: Angel Murillo</p>
+
+</div>
+
+</body>
+</html>

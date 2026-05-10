@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CEMG Patria</title>
+<link rel="icon" href="Imagenes\Patria Logo.png">
+<!---------------------------------------------------------------------CodigoCSS--------------------------------------------------------------------->
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+}
+
+/* ENCABEZADO */
+.header{
+    background:#2c3e50;
+    color:white;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header img{
+    height:90px;
+}
+
+
+.titulo-header{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Imagenes/Matcha Cih.ttf';
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:white;
+}
+.buscar{
+    position:absolute;
+    top:105px;
+    right:110px;
+    color:#dcdde1;
+    font-size:13px;
+    font-style:italic;
+}
+/* BUSCADOR */
+.search-box input{
+    padding:9px;
+}
+
+.search-box button{
+    padding:8px;
+}
+
+/* MENU */
+.menu-bar{
+    background:#34495e;
+    padding:10px;
+}
+
+.menu-btn{
+    background:#2ecc71;
+    color:white;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+}
+
+.menu{
+    display:none;
+    background:#ecf0f1;
+    padding:10px;
+}
+
+.menu a{
+    display:block;
+    margin:5px 0;
+}
+
+/* CONTENIDO */
+.content{
+    padding:20px;
+    display:flex;
+    gap:20px;
+    font-family:'Imagenes/Matcha Cih.ttf';
+    font-size:20px;
+
+}
+
+.content img{
+    width:300px;
+}
+
+/* CARRUSEL */
+.carousel{
+    width:100%;
+    max-width:500px;
+    margin:40px auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    background:#ecf0f1;
+    text-align:center;
+    padding:20px;
+}
+
+/* Cada slide */
+.slide{
+    position:absolute;
+    width:100%;
+    opacity:0;
+    transition: opacity 1s ease;
+    text-align:center;
+    display:none;
+    font-size:20px;
+}
+
+/* Slide visible */
+.active{
+    opacity:1;
+    position:relative;
+    display:block;
+}
+
+/* Imagen */
+.slide img{
+    object-fit:cover;
+    border-radius:15px;
+}
+
+/* Título */
+.slide h3{
+    margin:10px 0;
+    color:#2c3e50;
+}
+
+/* CONTACTO */
+.footer{
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+}
+</style>
+
+</head>
+<!---------------------------------------------------------------------CodigoHTMl--------------------------------------------------------------------->
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="Imagenes\Patria Logo.png" width=100 height=200 alt="Logo del colegio">
+
+	 <div class="titulo-header">
+        CEMG Patria
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="busqueda" placeholder="Buscar...">
+        <button onclick="buscar()">Buscar</button>
+    </div>
+<div class="buscar">
+	Busca tu Carrera Favorita!
+</div>
+</div>
+
+
+<!-- MENU -->
+<div class="menu-bar">
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <div class="menu" id="menu">
+        <button onclick="toggleMenu()">Cerrar</button>
+        <a href="Menu\Carreras.html">Carreras</a>
+        <a href="Index.html">Inicio</a>
+        <a href="Menu\Matricula.html">Matrícula</a>
+
+
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+    <div>
+        <h2>Sobre el Instituto</h2>
+        <p>El Centro de Educacion Media Gubernamental Patria.</p>
+        <p>Ubicado en Lima Vieja, y habiendo estando dando clases durante muchos años. Se enfoca en el aprendizaje y bienestar de sus estudiantes</p>
+    </div>
+
+    <img src="Imagenes/Fondo Info.jpg" alt="Imagen del instituto">
+</div>
+
+<!-- CARRUSEL -->
+<div class="carousel">
+    <div class="slide active">
+        <a href="Carreras\informatica.html">
+            <img src="Imagenes\Informatica.png" width=300px height=200px>
+            <h3>Informática</h3>
+        </a>
+    </div>
+
+    <div class="slide">
+        <a href="Carreras\Mercadotecnia.html">
+            <img src="Imagenes\Mercadotecnia.jpg">
+            <h3>Mercadotecnia</h3>
+        </a>
+    </div>
+
+    <div class="slide">
+        <a href="Carreras\Administracion.html">
+            <img src="Imagenes\Administracion.png" width=400px height=300px>
+            <h3>Administracion</h3>
+        </a>
+    </div>
+
+    <div class="slide">
+        <a href="Carreras\Contabilidad.html">
+            <img src="Imagenes\contabilidad.png" width=350 height=250>
+            <h3>Contabilidad</h3>
+        </a>
+    </div>
+
+    <br>
+    <button onclick="prev()">⬅</button>
+    <button onclick="next()">➡</button>
+</div>
+
+<!-- CONTACTO -->
+<div class="footer">
+    <h3>Contactos</h3>
+    <p>Ubicación: La Lima,Cortes</p>
+    <p>Teléfono: 9805-4444</p>
+    <p>Correo: InstitutoPatria@gmail.com</p>
+    <p>Alumno: Angel Murillo</p>
+
+<a href="https://www.instagram.com/areainformaticabtp/" target="_blank">
+    <button>
+        <img src="Imagenes/instagram.png" width=30 height=30 style="vertical-align:middle;"> 
+        Instagram
+    </button>
+</a>
+
+<a href="https://www.facebook.com/profile.php?id=100057820532773&sk=about" target="_blank">
+    <button>
+        <img src="Imagenes/facebook.png" width=30 height=30 style="vertical-align:middle;"> 
+        Facebook
+    </button>
+</a>
+</div>
+<!---------------------------------------------------------------------JavaScript--------------------------------------------------------------------->
+
+<script>
+
+/* BUSCADOR FUNCIONAL */
+function buscar(){
+    let texto = document.getElementById("busqueda").value.toLowerCase();
+
+    if(texto.includes("informatica")){
+        window.location.href = "Carreras/informatica.html";
+    } 
+    else if(texto.includes("mercadotecnia")){
+        window.location.href = "Carreras/Mercadotecnia.html";
+    } 
+    else if(texto.includes("administracion")){
+        window.location.href = "Carreras/Administracion.html";
+    } 
+    else if(texto.includes("contabilidad")){
+        window.location.href = "Carreras/Contabilidad.html";
+    } 
+    else{window.location.href = "file:///C:/Users/Herederos/Desktop/CEMG%20Patria/NotFound.html"    }
+}
+
+/* MENU */
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+/* CARRUSEL */
+let index = 0;
+let slides = document.getElementsByClassName("slide");
+
+function mostrarSlide(i){
+    for(let s of slides){
+        s.classList.remove("active");
+    }
+    slides[i].classList.add("active");
+}
+
+function next(){
+    index = (index + 1) % slides.length;
+    mostrarSlide(index);
+}
+
+function prev(){
+    index = (index - 1 + slides.length) % slides.length;
+    mostrarSlide(index);
+}
+
+/* AUTOMATICO */
+setInterval(next, 10000);
+
+</script>
+
+</body>
+</html>

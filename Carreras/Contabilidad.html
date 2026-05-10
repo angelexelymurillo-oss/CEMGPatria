@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CEMG Patria</title>
+
+<link rel="icon" href="Imagenes/Patria Logo.png">
+
+<!---------------------------------------------------------------------CodigoCSS--------------------------------------------------------------------->
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ENCABEZADO */
+.header{
+    background:#2c3e50;
+    color:white;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header img{
+    height:90px;
+}
+
+.titulo-header{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Imagenes/Matcha Cih.ttf';
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:white;
+}
+
+/* BUSCADOR */
+.search-box input{
+    padding:9px;
+}
+.buscar{
+    position:absolute;
+    top:105px;
+    right:110px;
+    color:#dcdde1;
+    font-size:13px;
+    font-style:italic;
+}
+
+
+.search-box button{
+    padding:8px;
+}
+
+/* MENU */
+.menu-bar{
+    background:#34495e;
+    padding:10px;
+}
+
+.menu-btn{
+    background:#2ecc71;
+    color:white;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+}
+
+.menu{
+    display:none;
+    background:#ecf0f1;
+    padding:10px;
+}
+
+.menu a{
+    display:block;
+    margin:5px 0;
+}
+
+/* CONTENIDO */
+.content{
+    padding:20px;
+    flex:1;
+    font-family:'Imagenes/Matcha Cih.ttf';
+    font-size:20px;
+}
+
+/* TITULO  */
+.content h2{
+    text-align:center;
+    font-family:'Imagenes/Matcha Cih.ttf';
+    font-size:30px;
+
+}
+
+/* CARRUSEL */
+
+.carrusel-bar{
+    background:#34495e;
+    padding:10px;
+    
+}
+
+.carousel{
+
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    margin-top:20px;
+}
+
+.slide{
+    display:none;
+    width:100%;
+}
+
+.slide.active{
+    display:block;
+}
+
+/* Imagen y video ocupan todo */
+.slide img,
+.slide video{
+   object-fit:cover;
+    display:block;
+}
+
+/* BOTONES */
+.carousel button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    color:white;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+
+/* CONTACTO */
+.footer{
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+    margin-top:auto;
+}
+
+</style>
+
+</head>
+<!---------------------------------------------------------------------CodigoHTMl--------------------------------------------------------------------->
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="Imagenes/Patria Logo.png" alt="Logo del colegio">
+	 <div class="titulo-header">
+        CEMG Patria
+    </div>
+    <div class="search-box">
+        <input type="text" id="busqueda" placeholder="Buscar...">
+        <button onclick="buscar()">Buscar</button>
+    </div>
+<div class="buscar">
+	Busca tu Carrera Favorita!
+</div>
+</div>
+
+<!-- MENU -->
+<div class="menu-bar">
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <div class="menu" id="menu">
+        <button onclick="toggleMenu()">Cerrar</button>
+        <a href="..\Menu\Carreras.html">Carreras</a>
+        <a href="..\Menu\Matricula.html">Matrícula</a>
+        <a href="..\Index.html">Inicio</a>
+
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+    <h2>💰 CONTABILIDAD</h2>
+
+
+
+	<h3>Descripción</h3>
+	<p>La carrera de Contabilidad se enfoca en el registro, control y análisis de las operaciones financieras de una empresa.
+</p>
+
+<br><hr><br>
+<ol>
+	<li><h3>¿Qué aprenderás?</h3></li>
+<ul>
+  	<li>Registro contable</li>
+	<li>Estados financieros</li>
+	<li>Control de ingresos y gastos</li>
+	<li>Legislación básica</li>
+	<li>Manejo de libros contables</li>
+
+
+</ul>
+
+
+	<li><h3>Habilidades que desarrollarás</h3></li>
+<ul>
+  	<li>Precisión y orden</li>
+  	<li>Análisis financiero</li>
+  	<li>Responsabilidad</li>
+  	<li>Ética profesional</li>
+  	<li>Campo laboral</li>
+	
+</ul>
+
+	<li><h3>Podras trabajar como</h3></li>
+<ul>
+  	<li>Auxiliar contable</li>
+  	<li>Asistente financiero</li>
+  	<li>Cajero o encargado de cuentas</li>
+  	<li>Controlador de ingresos</li>
+
+
+</ul>
+</ol>
+</p>
+<br><hr><br>
+
+
+
+    <!-- CARRUSEL -->
+
+    <div class="carousel">
+    <div class="carrusel-bar">
+        <center><div class="slide active">
+            <img src="Imagenes/Contabilidad1.png" width=650 height=350>
+        </div>
+
+        <div class="slide">
+            <img src="Imagenes/Contabilidad2.png" width=100% height=400>
+        </div>
+
+        <div class="slide">
+            <img src="Imagenes/Contabilidad3.png" width=700 height=400>
+        </div>
+
+        <button class="prev" onclick="prev()">⬅</button>
+        <button class="next" onclick="next()">➡</button>
+    </div>
+	</div>
+    
+</div>
+<br>
+
+
+
+<!-- CONTACTO -->
+<div class="footer">
+    <h3>Contactos</h3>
+    <p>Ubicación: La Lima, Cortes</p>
+    <p>Teléfono: 9805-4444</p>
+    <p>Correo: InstitutoPatria@gmail.com</p>
+    <p>Alumno: Angel Murillo</p>
+
+    <a href="https://www.instagram.com/areainformaticabtp/" target="_blank">
+        <button>
+            <img src="Imagenes/instagram.png" width="30" style="vertical-align:middle;"> Instagram
+        </button>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100057820532773&sk=about" target="_blank">
+        <button>
+            <img src="Imagenes/facebook.png" width="30" style="vertical-align:middle;"> Facebook
+        </button>
+    </a>
+</div>
+<!---------------------------------------------------------------------JavaScript--------------------------------------------------------------------->
+<script>
+
+/* BUSCADOR FUNCIONAL */
+function buscar(){
+    let texto = document.getElementById("busqueda").value.toLowerCase();
+
+    if(texto.includes("informatica")){
+        window.location.href = "informatica.html";
+    } 
+    else if(texto.includes("mercadotecnia")){
+        window.location.href = "Mercadotecnia.html";
+    } 
+    else if(texto.includes("administracion")){
+        window.location.href = "Administracion.html";
+    } 
+    else if(texto.includes("contabilidad")){
+        window.location.href = "Contabilidad.html";
+    } 
+    else{window.location.href = "../NotFound.html"    }
+}
+
+/* MENU */
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+/* CARRUSEL */
+let index = 0;
+let slides = document.getElementsByClassName("slide");
+
+function mostrarSlide(i){
+    for(let s of slides){
+        s.classList.remove("active");
+    }
+    slides[i].classList.add("active");
+}
+
+function next(){
+    index = (index + 1) % slides.length;
+    mostrarSlide(index);
+}
+
+function prev(){
+    index = (index - 1 + slides.length) % slides.length;
+    mostrarSlide(index);
+}
+
+/* AUTOMATICO */
+setInterval(next, 10000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CEMG Patria</title>
+
+<link rel="icon" href="../Imagenes/Patria Logo.png">
+
+<!---------------------------------------------------------------CodigoCSS--------------------------------------------------------------------->
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ENCABEZADO */
+.header{
+    background:#2c3e50;
+    color:white;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header img{
+    height:90px;
+}
+
+.titulo-header{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'../Carreras/Imagenes/Matcha Cih.ttf';
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:white;
+}
+
+/* BUSCADOR */
+.search-box input{
+    padding:9px;
+}
+.buscar{
+    position:absolute;
+    top:105px;
+    right:110px;
+    color:#dcdde1;
+    font-size:13px;
+    font-style:italic;
+}
+
+.search-box button{
+    padding:8px;
+}
+
+/* MENU */
+.menu-bar{
+    background:#34495e;
+    padding:10px;
+}
+
+.menu-btn{
+    background:#2ecc71;
+    color:white;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+}
+
+.menu{
+    display:none;
+    background:#ecf0f1;
+    padding:10px;
+}
+
+.menu a{
+    display:block;
+    margin:5px 0;
+}
+
+/* CONTENIDO */
+.content{
+    padding:20px;
+    flex:1;
+    font-family:'../Carreras/Imagenes/Matcha Cih.ttf';
+    font-size:20px;
+
+/* Carreras */
+}
+
+.carreras-container{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    display:block;
+    background:#34495e; 
+    padding:20px;
+    text-decoration:none;
+    color:white;
+}
+
+
+
+/* CONTACTO */
+.footer{
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+    margin-top:auto;
+}
+
+</style>
+
+</head>
+<!--------------------------------------------------------------CodigoHTMl--------------------------------------------------------------------->
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="../Imagenes/Patria Logo.png" alt="Logo del colegio">
+	 <div class="titulo-header">
+        CEMG Patria
+    </div>
+    <div class="search-box">
+        <input type="text" id="busqueda" placeholder="Buscar...">
+        <button onclick="buscar()">Buscar</button>
+    </div>
+<div class="buscar">
+	Busca tu Carrera Favorita!
+</div>
+</div>
+
+<!-- MENU -->
+<div class="menu-bar">
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <div class="menu" id="menu">
+        <button onclick="toggleMenu()">Cerrar</button>
+        <a href="..\Menu\Carreras.html">Carreras</a>
+        <a href="..\Menu\Matricula.html">Matrícula</a>
+        <a href="..\Index.html">Inicio</a>
+
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+    <h2>Carreras</h2>
+
+
+
+	<h3>Descripción</h3>
+	<p>Las siguientes son las Carreras disponibles en el Centro de Educacion Media Gubernamental Patria</p>
+
+
+<br><hr><br>
+
+<div class="carreras-container">
+
+    <a href="../Carreras/informatica.html" class="card">
+        <h3>Informática</h3>
+        <p>Programación, redes y desarrollo web.</p>
+    </a>
+
+    <a href="../Carreras/Mercadotecnia.html" class="card">
+        <h3>Mercadotecnia</h3>
+        <p>Publicidad, ventas y estrategias.</p>
+    </a>
+
+    <a href="../Carreras/Administracion.html" class="card">
+        <h3>Administración</h3>
+        <p>Gestión y liderazgo empresarial.</p>
+    </a>
+
+    <a href="../Carreras/Contabilidad.html" class="card">
+        <h3>Contabilidad</h3>
+        <p>Finanzas y registros contables.</p>
+    </a>
+
+</div>
+
+
+	    
+</div>
+<br>
+
+
+
+<!-- CONTACTO -->
+<div class="footer">
+    <h3>Contactos</h3>
+    <p>Ubicación: La Lima, Cortes</p>
+    <p>Teléfono: 9832-8273</p>
+    <p>Correo: InstitutoPatria@gmail.com</p>
+    <p>Alumno: Angel Murillo</p>
+
+    <a href="https://www.instagram.com/areainformaticabtp/" target="_blank">
+        <button>
+            <img src="../Imagenes/instagram.png" width="30" style="vertical-align:middle;"> Instagram
+        </button>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100057820532773&sk=about" target="_blank">
+        <button>
+            <img src="../Imagenes/facebook.png" width="30" style="vertical-align:middle;"> Facebook
+        </button>
+    </a>
+</div>
+<!--------------------------------------------------------------JavaScript--------------------------------------------------------------------->
+<script>
+
+/* BUSCADOR FUNCIONAL */
+function buscar(){
+    let texto = document.getElementById("busqueda").value.toLowerCase();
+
+    if(texto.includes("informatica")){
+        window.location.href = "../Carreras/informatica.html";
+    } 
+    else if(texto.includes("mercadotecnia")){
+        window.location.href = "../Carreras/Mercadotecnia.html";
+    } 
+    else if(texto.includes("administracion")){
+        window.location.href = "../Carreras/Administracion.html";
+    } 
+    else if(texto.includes("contabilidad")){
+        window.location.href = "../Carreras/Contabilidad.html";
+    } 
+    else{window.location.href = "../NotFound.html"    
+}
+}
+
+/* MENU */
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+</script>
+
+</body>
+</html>

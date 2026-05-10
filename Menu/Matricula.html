@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CEMG Patria</title>
+
+<link rel="icon" href="../Imagenes/Patria Logo.png">
+<!---------------------------------------------------------------CodigoCSS--------------------------------------------------------------------->
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ENCABEZADO */
+.header{
+    background:#2c3e50;
+    color:white;
+    padding:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'../Carreras/Imagenes/Matcha Cih.ttf';
+}
+
+.header img{
+    height:90px;
+}
+
+.titulo-header{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:white;
+}
+
+/* BUSCADOR */
+.search-box input{
+    padding:9px;
+}
+.buscar{
+    position:absolute;
+    top:105px;
+    right:110px;
+    color:#dcdde1;
+    font-size:13px;
+    font-style:italic;
+}
+
+.search-box button{
+    padding:8px;
+}
+
+/* MENU */
+.menu-bar{
+    background:#34495e;
+    padding:10px;
+}
+
+.menu-btn{
+    background:#2ecc71;
+    color:white;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+}
+
+.menu{
+    display:none;
+    background:#ecf0f1;
+    padding:10px;
+}
+
+.menu a{
+    display:block;
+    margin:5px 0;
+}
+
+/* CONTENIDO */
+.content{
+    padding:20px;
+    flex:1;
+}
+
+/* TITULO */
+.content h2{
+    text-align:center;
+    font-size:30px;
+    font-family:'../Carreras/Imagenes/Matcha Cih.ttf';
+}
+
+/* FORMULARIO */
+
+.formulario{
+    width:400px;
+    margin:auto;
+    background:#ecf0f1;
+    padding:20px;
+    border-radius:10px;
+}
+
+.campo{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:15px;
+}
+
+.campo label{
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.campo input,
+.campo select{
+    padding:10px;
+    border:1px solid #999;
+    border-radius:5px;
+    font-size:15px;
+}
+
+.btn-matricula{
+    width:100%;
+    padding:12px;
+    background:#2ecc71;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn-matricula:hover{
+    background:#27ae60;
+}
+
+/* ERROR */
+
+small{
+    color:red;
+    font-size:13px;
+    margin-top:3px;
+}
+
+/* CONTACTO */
+.footer{
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+    margin-top:auto;
+}
+
+</style>
+
+</head>
+<!--------------------------------------------------------------CodigoHTMl--------------------------------------------------------------------->
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+
+    <img src="../Imagenes/Patria Logo.png" alt="Logo del colegio">
+
+    <div class="titulo-header">
+        CEMG Patria
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="busqueda" placeholder="Buscar...">
+        <button onclick="buscar()">Buscar</button>
+    </div>
+<div class="buscar">
+	Busca tu Carrera Favorita!
+</div>
+
+</div>
+
+<!-- MENU -->
+<div class="menu-bar">
+
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <div class="menu" id="menu">
+
+        <button onclick="toggleMenu()">Cerrar</button>
+
+        <a href="../Menu/Carreras.html">Carreras</a>
+        <a href="../Menu/Matricula.html">Matrícula</a>
+        <a href="../Index.html">Inicio</a>
+
+    </div>
+
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+
+    <h2>📋 MATRÍCULA</h2>
+
+    <div class="formulario">
+
+        <!-- NOMBRE -->
+        <div class="campo">
+            <label>Nombre:</label>
+            <input type="text" id="nombre">
+            <small id="errorNombre"></small>
+        </div>
+
+        <!-- APELLIDO -->
+        <div class="campo">
+            <label>Apellido:</label>
+            <input type="text" id="apellido">
+            <small id="errorApellido"></small>
+        </div>
+
+        <!-- TELEFONO -->
+        <div class="campo">
+            <label>Número de teléfono:</label>
+            <input type="text" id="telefono">
+            <small id="errorTelefono"></small>
+        </div>
+
+        <!-- IDENTIDAD -->
+        <div class="campo">
+            <label>Número de identidad:</label>
+            <input type="text" id="cedula">
+            <small id="errorCedula"></small>
+        </div>
+
+        <!-- CARRERA -->
+        <div class="campo">
+
+            <label>Carrera:</label>
+
+            <select id="carrera">
+
+                <option value="">Seleccione una carrera</option>
+
+                <option>Informática</option>
+                <option>Mercadotecnia</option>
+                <option>Administración de Empresas</option>
+                <option>Contabilidad</option>
+
+            </select>
+
+            <small id="errorCarrera"></small>
+
+        </div>
+
+        <!-- AÑO -->
+        <div class="campo">
+
+            <label>Año:</label>
+
+            <select id="año">
+
+                <option value="">Seleccione un año</option>
+
+                <option>Primer Año</option>
+                <option>Segundo Año</option>
+                <option>Tercer Año</option>
+
+            </select>
+
+            <small id="errorAño"></small>
+
+        </div>
+
+        <!-- BOTON -->
+        <button class="btn-matricula" onclick="matricular()">
+            Matricular
+        </button>
+
+        <!-- MENSAJE -->
+        <p id="mensajeExito"></p>
+
+    </div>
+
+</div>
+
+<!-- CONTACTO -->
+<div class="footer">
+
+    <h3>Contactos</h3>
+
+    <p>Ubicación: La Lima, Cortes</p>
+    <p>Teléfono: 9832-8273</p>
+    <p>Correo: InstitutoPatria@gmail.com</p>
+    <p>Alumno: Angel Murillo</p>
+
+    <a href="https://www.instagram.com/areainformaticabtp/" target="_blank">
+        <button>
+            <img src="../Imagenes/instagram.png" width="30" style="vertical-align:middle;">
+            Instagram
+        </button>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100057820532773&sk=about" target="_blank">
+        <button>
+            <img src="../Imagenes/facebook.png" width="30" style="vertical-align:middle;">
+            Facebook
+        </button>
+    </a>
+
+</div>
+<!--------------------------------------------------------------JavaScript--------------------------------------------------------------------->
+<script>
+
+/* BUSCADOR */
+
+function buscar(){
+
+    let texto =
+    document.getElementById("busqueda").value.toLowerCase();
+
+    if(texto.includes("informatica")){
+        window.location.href = "informatica.html";
+    }
+
+    else if(texto.includes("mercadotecnia")){
+        window.location.href = "Mercadotecnia.html";
+    }
+
+    else if(texto.includes("administracion")){
+        window.location.href = "Administracion.html";
+    }
+
+    else if(texto.includes("contabilidad")){
+        window.location.href = "Contabilidad.html";
+    }
+
+    else{
+        window.location.href = "../NotFound.html";
+    }
+
+}
+
+/* MENU */
+
+function toggleMenu(){
+
+    let menu = document.getElementById("menu");
+
+    menu.style.display =
+    (menu.style.display === "block") ? "none" : "block";
+
+}
+
+/* FORMULARIO */
+
+function matricular(){
+
+    let nombre =
+    document.getElementById("nombre").value;
+
+    let apellido =
+    document.getElementById("apellido").value;
+
+    let telefono =
+    document.getElementById("telefono").value;
+
+    let cedula =
+    document.getElementById("cedula").value;
+
+    let carrera =
+    document.getElementById("carrera").value;
+
+    let año =
+    document.getElementById("año").value;
+
+    /* LIMPIAR ERRORES */
+
+    document.getElementById("errorNombre").innerHTML = "";
+    document.getElementById("errorApellido").innerHTML = "";
+    document.getElementById("errorTelefono").innerHTML = "";
+    document.getElementById("errorCedula").innerHTML = "";
+    document.getElementById("errorCarrera").innerHTML = "";
+    document.getElementById("errorAño").innerHTML = "";
+    document.getElementById("mensajeExito").innerHTML = "";
+
+    let valido = true;
+
+    /* VALIDACIONES */
+
+    if(nombre == ""){
+        document.getElementById("errorNombre").innerHTML =
+        "Ingrese su nombre";
+        valido = false;
+    }
+
+    if(apellido == ""){
+        document.getElementById("errorApellido").innerHTML =
+        "Ingrese su apellido";
+        valido = false;
+    }
+
+    if(telefono == ""){
+    document.getElementById("errorTelefono").innerHTML =
+    "Ingrese su teléfono";
+    valido = false;
+}
+
+    else if(isNaN(telefono)){
+    document.getElementById("errorTelefono").innerHTML =
+    "Solo se permiten números";
+    valido = false;
+}
+
+    if(cedula == ""){
+    document.getElementById("errorCedula").innerHTML =
+    "Ingrese su identidad";
+    valido = false;
+}
+
+    else if(isNaN(cedula)){
+    document.getElementById("errorCedula").innerHTML =
+    "Solo se permiten números";
+    valido = false;
+}
+
+    if(carrera == ""){
+        document.getElementById("errorCarrera").innerHTML =
+        "Seleccione una carrera";
+        valido = false;
+    }
+
+    if(año == ""){
+        document.getElementById("errorAño").innerHTML =
+        "Seleccione un año";
+        valido = false;
+    }
+
+    
+    if(valido == true){
+
+        window.location.href = "MatriculaExitosa.html";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
